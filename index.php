@@ -51,12 +51,6 @@ $arrayProdotti = [
 ]
 ?>
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,26 +64,35 @@ $arrayProdotti = [
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <?php foreach ($arrayProdotti as $item) : ?>
-                <div class="col-3">
-                    <div style="width: 100%; height: 100%" class="d-flex flex-column ">
-                        <div style="height: 70%; width:100%" class="border position-relative ">
-                            <img style="width: 100%; height:100%" src="<?php echo $item->immagine; ?>" alt="">
-                            
-                                <i class="<?php echo $item->icona; ?> position-absolute p-1"></i>
+    <header class="d-flex justify-content-center align-items-center">
+        <div id="box" class="d-flex pattern-text align-items-center justify-content-center">
+            <h1 class=" text">Animal Shop</h1>
+        </div>
+    </header>
+    
+    <main style="height: 80vh;" class="text-light fs-5">
+      <div style="height: 100%;" class="container">
+            <div style="height: 100%;" class="row d-flex gap-2">
+                <?php foreach ($arrayProdotti as $item) : ?>
+                    <div id="card" class="col-3">
+                        <div style="width: 100%; height: 100%" class="d-flex flex-column ">
+                            <div style="height: 80%; width:100%" class=" position-relative ">
+                                <img style="width: 100%; height:100%" src="<?php echo $item->immagine; ?>" alt="">
+                                    <i class="<?php echo $item->icona; ?> position-absolute p-1"></i>
+                            </div>
+                            <div  class="d-flex justify-content-between pt-4">
+                                <span><?php echo $item->nome; ?></span>
+                                <span>€<?php echo $item->prezzo; ?></span>
+                            </div>
                             
                         </div>
-                        <span><?php echo $item->nome; ?></span>
-                        <span>€<?php echo $item->prezzo; ?></span>
-                        
                     </div>
-                </div>
-            <?php endforeach ?>
-        </div>
+                <?php endforeach ?>
+            </div>
 
-    </div>
+        </div>  
+    </main>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
