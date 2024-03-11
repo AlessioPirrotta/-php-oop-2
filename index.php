@@ -1,6 +1,6 @@
 <?php
-$error = ""; // Inizializza una stringa vuota per memorizzare l'eventuale errore
-$errored_item = ""; // Inizializza una stringa vuota per memorizzare il nome dell'articolo con taglia non valida
+$error = ""; 
+$errored_item = ""; 
 
 class Prodotto
 {
@@ -42,7 +42,7 @@ class Cane extends Prodotto
         $this->icona = $_icona;
         $this->setTaglia($_taglia);
         
-        global $errored_item; // Utilizza la variabile globale per memorizzare il nome dell'articolo con taglia non valida
+        global $errored_item; 
         
         try {
             $this->verificaTaglia($_taglia);
@@ -50,7 +50,7 @@ class Cane extends Prodotto
         } catch (Exception $e) {
             global $error;
             $error = $e->getMessage();
-            $errored_item = $this->nome; // Memorizza il nome dell'articolo con taglia non valida
+            $errored_item = $this->nome; 
         }
     }
 
@@ -78,7 +78,7 @@ class Gatto extends Prodotto
         $this->icona = $_icona;
         $this->setTaglia($_taglia);
     
-        global $errored_item; // Utilizza la variabile globale per memorizzare il nome dell'articolo con taglia non valida
+        global $errored_item; 
     
         try {
             $this->verificaTaglia($_taglia);
@@ -86,7 +86,7 @@ class Gatto extends Prodotto
         } catch (Exception $e) {
             global $error;
             $error = $e->getMessage();
-            $errored_item = $this->nome; // Memorizza il nome dell'articolo con taglia non valida
+            $errored_item = $this->nome; 
         }
     }
     
